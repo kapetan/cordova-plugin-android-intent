@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-android-intent"
+        version="1.0.0">
+  <name>Android Intent</name>
+  <description>Cordova plugin for sending Android intents</description>
+  <author>Mirza Kapetanovic</author>
+  <keywords></keywords>
+  <license>ISC</license>
+  <repo>git+https://github.com/kapetan/cordova-plugin-android-intent.git</repo>
+  <issue>https://github.com/kapetan/cordova-plugin-android-intent/issues</issue>
+  <platform name="android">
+    <js-module src="www/index.js" name="Intent">
+      <clobbers target="cordova.plugins.Intent" />
+    </js-module>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <preference name="android-minSdkVersion" value="23" />
+
+      <feature name="IntentPlugin">
+        <param name="android-package" value="dk.kapetanovic.intent.IntentPlugin" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/dk/kapetanovic/intent/IntentPlugin.java" target-dir="src/dk/kapetanovic/intent" />
+  </platform>
+</plugin>
