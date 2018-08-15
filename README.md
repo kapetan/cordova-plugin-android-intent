@@ -11,7 +11,7 @@ Create and send an intent using the exposed constructor. Additional details can 
 ```javascript
 cordova.plugins.Intent({
   action: 'android.intent.action.VIEW',
-  data: '/example.pdf',
+  data: 'file:///sdcard/Download/example.pdf',
   type: 'application/pdf',
   categories: [
     'android.intent.category.ALTERNATIVE'
